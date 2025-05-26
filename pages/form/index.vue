@@ -65,29 +65,31 @@
     }
 
     const getDataPrinvinsi = async () => {
+        errorApi.value('')
         try {
             const res = await fetch('https://www.emsifa.com/api-wilayah-indonesia/api/provinces.json')
             const data = await res.json()
             dataProvinsi.value = data
         } catch (err) {
-            //console.error('💀 Gagal mengambil data provinsi:', err)
+            errorApi.value('Gagal mengambil data provinsi. Silakan coba lagi nanti.')
         }
     }
     const getDataKabupaten = async (idProv) => {
+        errorApi.value('')
         try {
             const res = await fetch(`https://www.emsifa.com/api-wilayah-indonesia/api/regencies/${idProv}.json`)
             dataKabupaten.value = await res.json()
         } catch {
-            //console.error('💀 Gagal mengambil data kabupaten:', err)
+            errorApi.value('Gagal mengambil data provinsi. Silakan coba lagi nanti.')
         }
     }
     const getDataKecamatan = async (idKab) => {
+        errorApi.value('')
         try {
             const res = await fetch(`https://www.emsifa.com/api-wilayah-indonesia/api/districts/${idKab}.json`)
             dataKecamatan.value = await res.json()
-            //console.log(dataKecamatan.value)
         } catch {
-            //console.error('💀 Gagal mengambil data kecamatan:', err)
+            errorApi.value('Gagal mengambil data provinsi. Silakan coba lagi nanti.')
         }
     }
 
@@ -113,13 +115,10 @@
     const onFileChange = (e) => {
         const file = e.target.files[0]
         const allowedTypes = ['image/jpeg', 'image/png', 'image/jpg']
-        //console.log(file)
-        //console.log(allowedTypes.includes(file.type))
         if (file && allowedTypes.includes(file.type)) {
             form.value.image = file
         } else {
             form.value.image = null
-            // alert('Mohon unggah file JPG atau PNG saja!')
         }
     }
 
