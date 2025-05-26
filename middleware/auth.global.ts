@@ -1,5 +1,5 @@
 export default defineNuxtRouteMiddleware((to) => {
-  console.log(to)
+  //console.log(to)
   const email = useCookie('email')
 
   // Biar nggak redirect terus kalau udah di halaman login

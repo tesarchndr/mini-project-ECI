@@ -41,7 +41,7 @@ const handleLogin = async () => {
     email.value = form.value.email
     router.push('/')
   } catch (err) {
-    console.log(err)
+    //console.log(err)
   } finally {
     loading.value = false
   }

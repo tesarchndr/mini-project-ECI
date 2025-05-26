@@ -24,7 +24,7 @@ const generateStar =  async (type) => {
             visibleStar.value.push(star) 
             await delay(300)
         }
-        console.log('visibleStar',visibleStar.value)   
+        //console.log('visibleStar',visibleStar.value)   
     }
     if (type === 'Type 2') {
         for (let i = 1; i <= props.numberStar; i++) {
@@ -52,7 +52,7 @@ const generateStar =  async (type) => {
             });
             await delay(300)
         }
-        console.log(visibleStar.value)
+        //console.log(visibleStar.value)
     }
 }
 

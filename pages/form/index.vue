@@ -70,7 +70,7 @@
             const data = await res.json()
             dataProvinsi.value = data
         } catch (err) {
-            console.error('💀 Gagal mengambil data provinsi:', err)
+            //console.error('💀 Gagal mengambil data provinsi:', err)
         }
     }
     const getDataKabupaten = async (idProv) => {
@@ -78,16 +78,16 @@
             const res = await fetch(`https://www.emsifa.com/api-wilayah-indonesia/api/regencies/${idProv}.json`)
             dataKabupaten.value = await res.json()
         } catch {
-            console.error('💀 Gagal mengambil data kabupaten:', err)
+            //console.error('💀 Gagal mengambil data kabupaten:', err)
         }
     }
     const getDataKecamatan = async (idKab) => {
         try {
             const res = await fetch(`https://www.emsifa.com/api-wilayah-indonesia/api/districts/${idKab}.json`)
             dataKecamatan.value = await res.json()
-            console.log(dataKecamatan.value)
+            //console.log(dataKecamatan.value)
         } catch {
-            console.error('💀 Gagal mengambil data kecamatan:', err)
+            //console.error('💀 Gagal mengambil data kecamatan:', err)
         }
     }
 
@@ -113,8 +113,8 @@
     const onFileChange = (e) => {
         const file = e.target.files[0]
         const allowedTypes = ['image/jpeg', 'image/png', 'image/jpg']
-        console.log(file)
-        console.log(allowedTypes.includes(file.type))
+        //console.log(file)
+        //console.log(allowedTypes.includes(file.type))
         if (file && allowedTypes.includes(file.type)) {
             form.value.image = file
         } else {
@@ -171,19 +171,19 @@
                 asdsa: ''
             }
 
-            console.log('payload', payload)
+            //console.log('payload', payload)
             const res = await $fetch('https://dummyjson.com/users/add', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
             })
-            console.log('Success:', res)
+            //console.log('Success:', res)
             showModalConf.value = false
             showModalResult.value = true
             errorApi.value = ''
         } catch (error) {
-            console.log(error)
+            //console.log(error)
             errorApi.value = 'Terjadi kesalahan. Silakan coba lagi.'
             showModalConf.value = false
         } finally {

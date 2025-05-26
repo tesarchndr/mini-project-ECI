@@ -15,12 +15,12 @@ const showModalResult = ref(false)
 const handleConfirm = () => {
     showModalConf.value = false
     showModalResult.value = true
-    console.log('confirm nih')
+    //console.log('confirm nih')
 }
 
 const handleCancel = () => {
     showModalConf.value = false
-    console.log('confirm nih')
+    //console.log('confirm nih')
 }
 
 const increment = () => {
