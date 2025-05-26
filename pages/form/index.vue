@@ -1,4 +1,8 @@
 <script setup>
+useSeoMeta({
+    title: 'form',
+    description: 'form'
+})
     const form = ref({
         nama: '',
         email: '',
