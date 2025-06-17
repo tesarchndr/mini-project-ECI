@@ -69,31 +69,31 @@ useSeoMeta({
     }
 
     const getDataPrinvinsi = async () => {
-        errorApi.value('')
+        errorApi.value = ''
         try {
             const res = await fetch('https://www.emsifa.com/api-wilayah-indonesia/api/provinces.json')
             const data = await res.json()
             dataProvinsi.value = data
         } catch (err) {
-            errorApi.value('Gagal mengambil data provinsi. Silakan coba lagi nanti.')
+            errorApi.value = 'Gagal mengambil data provinsi. Silakan coba lagi nanti.'
         }
     }
     const getDataKabupaten = async (idProv) => {
-        errorApi.value('')
+        errorApi.value = ''
         try {
             const res = await fetch(`https://www.emsifa.com/api-wilayah-indonesia/api/regencies/${idProv}.json`)
             dataKabupaten.value = await res.json()
         } catch {
-            errorApi.value('Gagal mengambil data provinsi. Silakan coba lagi nanti.')
+            errorApi.value= 'Gagal mengambil data provinsi. Silakan coba lagi nanti.'
         }
     }
     const getDataKecamatan = async (idKab) => {
-        errorApi.value('')
+        errorApi.value = ''
         try {
             const res = await fetch(`https://www.emsifa.com/api-wilayah-indonesia/api/districts/${idKab}.json`)
             dataKecamatan.value = await res.json()
         } catch {
-            errorApi.value('Gagal mengambil data provinsi. Silakan coba lagi nanti.')
+            errorApi.value= 'Gagal mengambil data provinsi. Silakan coba lagi nanti.'
         }
     }
 
